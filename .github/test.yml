@@ -1,0 +1,19 @@
+name: release-package
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Clean install dependencies and test
+        run: |
+          npm ci
+          npm test
