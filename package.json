@@ -40,10 +40,6 @@
   },
   "type": "module",
   "main": "InputMultiRange.svelte",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/maryco/svelte-input-multirange.git"
