@@ -42,7 +42,10 @@
   "main": "InputMultiRange.svelte",
   "repository": {
     "type": "git",
-    "url": "git://github.com/maryco/svelte-input-multirange.git"
+    "url": "https://github.com/maryco/svelte-input-multirange.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maryco/svelte-input-multirange/issues"
   },
   "exports": {
     ".": "./InputMultiRange.svelte",
