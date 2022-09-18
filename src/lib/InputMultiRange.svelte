@@ -39,6 +39,11 @@
   // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/globalThis
   const isTouchDevice = 'ontouchstart' in globalThis
 
+  // A unique key for using different styles in each component
+  const styleKey = `${Date.now().toString(16)}-${Math.floor(Math.random() * 50)}`
+  // Inner bar color when setting invalid color for gradient
+  const noneGradientBarColor = '#b1b6bd'
+
   let clientWidth = 0
   let isActiveL = false
   let isActiveR = false
@@ -289,7 +294,7 @@
     <title>Range Controller</title>
     <desc>Manipulate range from {rangeMin} to {rangeMax}</desc>
     <defs>
-      <linearGradient id="gradient-inner" gradientUnits="userSpaceOnUse">
+      <linearGradient id="range-gradient-{styleKey}" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stop-color={rangeMinColor} />
         <stop offset="100%" stop-color={rangeMaxColor} />
       </linearGradient>
@@ -315,6 +320,7 @@
       {...innerBarProps}
       stroke-width={barWidth * 0.8}
       stroke="#cccccc"
+      style="stroke: url(#range-gradient-{styleKey}) {noneGradientBarColor}"
       class="input-multi-range__inner-bar"
     />
     <g role="button" aria-pressed={isActiveL}>
@@ -352,7 +358,7 @@
   </svg>
 </div>
 
-<style>
+<style global>
   .input-multi-range {
     width: 100%;
     height: 100%;
@@ -364,10 +370,6 @@
 
   .input-multi-range__outer-bar--dark {
     stroke: #808080;
-  }
-
-  .input-multi-range__inner-bar {
-    stroke: url(#gradient-inner);
   }
 
   .input-multi-range__knob {
