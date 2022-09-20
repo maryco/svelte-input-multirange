@@ -15,8 +15,6 @@ const removeIgnoredFiles = async (files) => {
 export default {
   '**/*.{ts,tsx,cjs,js,jsx,svelte}': async (files) => {
     const filesToLint = await removeIgnoredFiles(files)
-    return [
-      `eslint ${filesToLint}`
-    ]
+    return [`npm run format ${filesToLint}`, `eslint ${filesToLint}`]
   },
 }
