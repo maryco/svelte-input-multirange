@@ -206,7 +206,7 @@
     }
 
     if (isTouchDevice) {
-      document.addEventListener('touchstart', handleHold, { passive: false })
+      document.addEventListener('touchstart', handleHold, true)
     } else {
       document.addEventListener('mousedown', handleHold, true)
       document.addEventListener('mouseup', handleRelease, true)
@@ -216,9 +216,7 @@
       destroy() {
         document.removeEventListener('mousedown', handleHold, true)
         document.removeEventListener('mouseup', handleRelease, true)
-        document.removeEventListener('touchstart', handleHold, {
-          passive: false,
-        } as EventListenerOptions)
+        document.removeEventListener('touchstart', handleHold, true)
       },
     }
   }
@@ -269,7 +267,7 @@
     }
 
     if (isTouchDevice) {
-      document.addEventListener('touchmove', handleMove, { passive: false })
+      document.addEventListener('touchmove', handleMove, true)
       document.addEventListener('touchend', handleMoveEnd, true)
     } else {
       document.addEventListener('mousemove', handleMove, true)
@@ -280,9 +278,7 @@
       destroy() {
         document.removeEventListener('mousemove', handleMove, true)
         document.removeEventListener('mouseup', handleMoveEnd, true)
-        document.removeEventListener('touchmove', handleMove, {
-          passive: false,
-        } as EventListenerOptions)
+        document.removeEventListener('touchmove', handleMove, true)
         document.removeEventListener('touchend', handleMoveEnd, true)
       },
     }
