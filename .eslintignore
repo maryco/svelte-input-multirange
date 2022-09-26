@@ -16,3 +16,4 @@ yarn.lock
 *.md
 /.worknote
 /.husky
+/docs
