@@ -35,7 +35,7 @@ function handleChangeRange(e: CustomEvent<RangeChanged>) {
 ```
 
 ```html
-<InputMultiRange key={'1'} barWidth={40} knobSize={42} rangeMin={-100} rangeMax={100}
+<InputMultiRange key={'1'} barHeight={40} knobSize={42} rangeMin={-100} rangeMax={100}
 defaultFrom={10} defaultTo={25} throttole={10} on:range-changed={handleChangeRange} />
 ```
 
@@ -45,7 +45,7 @@ properties are all optional.
 |name|type|description|default|
 |---|---|---|---|
 |key|string|sets value for identification, when using multiple components|empty string|
-|barWidth|number|width of a bar|20|
+|barHeight|number|height of a bar|20|
 |knobSize|number|diameter of the range-control knobs|20|
 |rangeMin|number|available range max value|0|
 |rangeMax|number|available range min value|100|

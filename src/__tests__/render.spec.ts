@@ -33,7 +33,7 @@ describe('Render with various properties', () => {
   const properties = [
     {
       props: {
-        barWidth: 10,
+        barHeight: 10,
         knobSize: 0,
         rangeMin: 0,
         rangeMax: 100,
@@ -44,7 +44,7 @@ describe('Render with various properties', () => {
     // out of range
     {
       props: {
-        barWidth: 15,
+        barHeight: 15,
         knobSize: 20,
         rangeMin: 0,
         rangeMax: 100,
@@ -55,7 +55,7 @@ describe('Render with various properties', () => {
     // from grater than to
     {
       props: {
-        barWidth: 40,
+        barHeight: 40,
         knobSize: 20,
         rangeMin: 0,
         rangeMax: 100,
@@ -66,7 +66,7 @@ describe('Render with various properties', () => {
     // from and to are same
     {
       props: {
-        barWidth: 1,
+        barHeight: 1,
         knobSize: 20,
         rangeMin: 0,
         rangeMax: 100,
@@ -77,7 +77,7 @@ describe('Render with various properties', () => {
     // no range
     {
       props: {
-        barWidth: 2,
+        barHeight: 2,
         knobSize: 20,
         rangeMin: 1,
         rangeMax: 1,
@@ -88,7 +88,7 @@ describe('Render with various properties', () => {
     // range min is negative
     {
       props: {
-        barWidth: 1,
+        barHeight: 1,
         knobSize: 20,
         rangeMin: -100,
         rangeMax: 100,
@@ -99,7 +99,7 @@ describe('Render with various properties', () => {
     // range min and max is negative
     {
       props: {
-        barWidth: 0,
+        barHeight: 0,
         knobSize: 20,
         rangeMin: -2000,
         rangeMax: -99,

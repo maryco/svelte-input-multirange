@@ -9,7 +9,7 @@
   /**
    * Properties
    *
-   * - barWidth: the width of the range bar
+   * - barHeight: the height of the range bar
    * - knobSize: the diameter of the range-control knobs
    * - rangeMin,rangeMax: the available range max and min value
    * - defaultFrom, defaultTo: initial from and to values of the range
@@ -17,7 +17,7 @@
    * - throttole: throttle for a emits event 'change-range'
    */
   export let key = ''
-  export let barWidth = 20
+  export let barHeight = 20
   export let knobSize = 20
   export let rangeMin = 0
   export let rangeMax = 100
@@ -29,8 +29,8 @@
   export let throttole = 0
 
   // prevent invalid props
-  if (barWidth < 0) {
-    barWidth = 0
+  if (barHeight < 0) {
+    barHeight = 0
   }
   if (knobSize <= 0) {
     knobSize = 1
@@ -49,7 +49,7 @@
   let isActiveR = false
   let stateFrom: number
   let stateTo: number
-  let viewBox = `0 0 ${clientWidth} ${barWidth}`
+  let viewBox = `0 0 ${clientWidth} ${barHeight}`
   let throttoleTimer = false
 
   /**
@@ -74,7 +74,7 @@
   $: knobLeft = {
     circle: {
       cx: knobSize,
-      cy: barWidth / 2,
+      cy: barHeight / 2,
       r: knobRadius,
     },
     xMin: knobSize,
@@ -85,7 +85,7 @@
   $: knobRight = {
     circle: {
       cx: clientWidth - knobSize,
-      cy: barWidth / 2,
+      cy: barHeight / 2,
       r: knobRadius,
     },
     xMin: knobSize * 2,
@@ -96,17 +96,17 @@
    * Bar
    */
   $: outerBarProps = {
-    x1: barWidth / 2,
-    y1: barWidth / 2,
-    x2: clientWidth - barWidth / 2,
-    y2: barWidth / 2,
+    x1: barHeight / 2,
+    y1: barHeight / 2,
+    x2: clientWidth - barHeight / 2,
+    y2: barHeight / 2,
   }
 
   $: innerBarProps = {
     x1: knobLeft.circle.cx,
-    y1: barWidth / 2,
+    y1: barHeight / 2,
     x2: knobRight.circle.cx,
-    y2: barWidth / 2,
+    y2: barHeight / 2,
   }
 
   onMount(() => {
@@ -159,7 +159,7 @@
         if (!clientWidth) {
           return
         }
-        viewBox = `0 0 ${clientWidth} ${barWidth}`
+        viewBox = `0 0 ${clientWidth} ${barHeight}`
         initialize()
       },
     }
@@ -309,12 +309,12 @@
     <line
       {...outerBarProps}
       stroke-linecap="round"
-      stroke-width={barWidth}
+      stroke-width={barHeight}
       class={`input-multi-range__outer-bar${useDarkMode ? '--dark' : ''}`}
     />
     <line
       {...innerBarProps}
-      stroke-width={barWidth * 0.8}
+      stroke-width={barHeight * 0.8}
       stroke="#cccccc"
       style="stroke: url(#range-gradient-{styleKey}) {noneGradientBarColor}"
       class="input-multi-range__inner-bar"
