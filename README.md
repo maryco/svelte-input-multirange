@@ -7,7 +7,7 @@ Create new Svelte-kit project [`create-svelte`](https://github.com/sveltejs/kit/
 ## Install
 
 ```bash
-npm i -D @maryco/svelte-input-multirange
+npm i -D svelte-input-multirange
 ```
 
 ## Usage
@@ -15,8 +15,8 @@ npm i -D @maryco/svelte-input-multirange
 Import component and custom event.
 
 ```typescript
-import InputMultiRange from '@maryco/svelte-input-multirange'
-import type RangeChanged from '@maryco/svelte-input-multirange/range-changed'
+import InputMultiRange from 'svelte-input-multirange'
+import type RangeChanged from 'svelte-input-multirange/range-changed'
 ```
 
 When render by using default properties.
