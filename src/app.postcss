@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@400;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .block-caption {
+    @apply lg:basis-1/2 px-10 lg:px-20 my-10 font-sans text-base font-normal text-app-text;
+  }
+}

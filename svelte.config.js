@@ -10,6 +10,9 @@ const config = {
   preprocess: [
     preprocess({
       postcss: true,
+      defaults: {
+        style: 'postcss',
+      },
     }),
   ],
 
