@@ -35,9 +35,22 @@ function handleChangeRange(e: CustomEvent<RangeChanged>) {
 ```
 
 ```html
-<InputMultiRange key={'1'} barHeight={40} knobSize={42} rangeMin={-100} rangeMax={100}
-defaultFrom={10} defaultTo={25} throttole={10} on:range-changed={handleChangeRange} />
+<div style="height: 48px; width:200px;">
+  <InputMultiRange
+    key={'1'}
+    barHeight={40}
+    knobSize={42}
+    rangeMin={-100}
+    rangeMax={100}
+    defaultFrom={10}
+    defaultTo={25}
+    throttole={10}
+    on:range-changed={handleChangeRange}
+  />
+</div>
 ```
+
+NOTE: The display size depends on the parent tag, so wrap it in any tag to control the size. (It is better to set the height slightly larger than the size of the bar or knob.)
 
 ## Properties
 
