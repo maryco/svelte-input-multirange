@@ -8,7 +8,7 @@
   <MainVisual />
 </div>
 
-<div class="bg-slate-50">
+<div class="bg-slate-50 dark:bg-slate-400">
   <div class="container">
     <PropertyExamples />
   </div>

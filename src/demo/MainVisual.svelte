@@ -1,6 +1,7 @@
 <script lang="ts">
   import InputMultiRange from '$lib/InputMultiRange.svelte'
   import type RangeChanged from '$lib/range-changed'
+  import { onMount } from 'svelte'
   import Logo from './Logo.svelte'
 
   let eyeLeft = 0
@@ -9,6 +10,11 @@
     eyeLeft = e.detail.from
     eyeRight = e.detail.to
   }
+
+  let isDarkMode = false
+  onMount(() => {
+    isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  })
 </script>
 
 <div class="md:h-screen flex flex-col flex-nowrap justify-center items-center">
@@ -64,6 +70,7 @@
       rangeMax={20}
       throttole={100}
       on:range-changed={handleEyeMove}
+      useDarkMode={isDarkMode}
     />
   </div>
 </div>

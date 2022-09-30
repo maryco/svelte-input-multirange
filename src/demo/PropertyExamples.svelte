@@ -1,5 +1,6 @@
 <script lang="ts" context="module">
   export interface DemoProps {
+    showLabel: boolean
     barHeight?: number
     knobSize?: number
     rangeMin?: number
@@ -8,7 +9,6 @@
     defaultTo?: number
     rangeMinColor?: string
     rangeMaxColor?: string
-    showLabel: boolean
   }
 </script>
 
