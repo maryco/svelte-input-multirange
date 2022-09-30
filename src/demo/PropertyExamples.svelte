@@ -66,11 +66,11 @@
   const styleExample = `
 /* EXAMPLE */
 &lt;style global&gt;
-  .my-range .input-multi-range__knob {
+  .my-range :global(.input-multi-range__knob) {
     /* knob color inactive */
     fill: #4c455c;
   }
-  .my-range .input-multi-range__knob--active {
+  .my-range :global(.input-multi-range__knob--active) {
     /* knob color active */
     fill: #fffdb7;
   }
