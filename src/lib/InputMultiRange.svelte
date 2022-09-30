@@ -193,7 +193,9 @@
 
   function grab(node: Element) {
     const handleHold = (e: MouseEvent | TouchEvent) => {
-      e.preventDefault()
+      if (!isTouchDevice) {
+        e.preventDefault()
+      }
       if (node.contains(e.target as Node)) {
         node.dispatchEvent(new CustomEvent('hold'))
       }
@@ -223,8 +225,10 @@
 
   function swipe(node: Element) {
     const handleMove = (e: Event) => {
-      e.preventDefault()
-      e.stopPropagation()
+      if (!isTouchDevice) {
+        e.preventDefault()
+        e.stopPropagation()
+      }
       const gaugeContainer = node.getBoundingClientRect()
       if (isActiveL) {
         let x = Math.max(knobLeft.xMin, Math.round(getScreenX(e) - gaugeContainer.left))
