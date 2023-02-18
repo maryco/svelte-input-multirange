@@ -7,7 +7,7 @@ Create new Svelte-kit project [`create-svelte`](https://github.com/sveltejs/kit/
 ## Install
 
 ```bash
-npm i -D svelte-input-multirange
+npm i svelte-input-multirange
 ```
 
 ## Usage
