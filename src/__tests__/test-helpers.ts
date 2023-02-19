@@ -7,8 +7,8 @@ export const getCtxProperties = (component: SvelteComponent): any => {
     [key: string]: any
   }
   const ctxProps: CtxProps = {}
-  Object.keys(component.$$.props).forEach((key) => {
-    ctxProps[key] = component.$$.ctx[component.$$.props[key]]
+  Object.keys(component.$$.props).forEach((key: any) => {
+    ctxProps[key] = component.$$.ctx[component.$$.props[key] as number]
   })
   return ctxProps
 }
