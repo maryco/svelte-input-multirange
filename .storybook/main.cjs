@@ -1,7 +1,6 @@
 module.exports = {
   stories: [
     // Introduction and sample stories
-    '../src/stories/*.stories.@(mdx|js)',
     '../src/lib/**/*.stories.@(ts|js|mdx)',
   ],
   addons: [
