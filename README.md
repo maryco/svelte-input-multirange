@@ -57,17 +57,17 @@ NOTE: The display size depends on the parent tag, so wrap it in any tag to contr
 properties are all optional.
 |name|type|description|default|
 |---|---|---|---|
-|key|string|sets value for identification, when using multiple components|empty string|
-|barHeight|number|height of a bar|20|
-|knobSize|number|diameter of the range-control knobs|20|
-|rangeMin|number|available range max value|0|
-|rangeMax|number|available range min value|100|
-|defaultFrom|number|initial from value of the range|0|
-|defaultTo|number|initial to values of the range|100|
-|rangeMinColor|string|color of range max value (hex)|<span style="color:#00bc9b">#00bc9b</span>|
-|rangeMaxColor|string|color of range max value (hex)|<span style="color:#5eaefd">#5eaefd</span>|
-|useDarkMode|bool|if set to `true`, color of the basebar will be dark|false|
-|throttole|number|throttle for a emits event 'change-range'|0|
+|key|string|Sets the identifying value when using multiple components|empty string|
+|barHeight|number|Bar height|20|
+|knobSize|number|Range control knob diameter|20|
+|rangeMin|number|Minimum value available in the range|0|
+|rangeMax|number|Maximum value available in the range|100|
+|defaultFrom|number|The initial value for the start of the range|0|
+|defaultTo|number|The initial value for the end of the range|100|
+|rangeMinColor|string|Range minimum color (hex)|<span style="color:#00bc9b">#00bc9b</span>|
+|rangeMaxColor|string|Range maximum color (hex)|<span style="color:#5eaefd">#5eaefd</span>|
+|useDarkMode|bool|If set to `true`, color of the basebar will be dark|false|
+|throttole|number|Throttle on emits event 'change-range'|0|
 
 ## Events
 

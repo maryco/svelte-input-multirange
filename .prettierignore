@@ -17,3 +17,5 @@ yarn.lock
 /.worknote
 /.husky
 README.md
+
+/storybook-static

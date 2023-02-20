@@ -6,7 +6,23 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
+    'plugin:storybook/recommended',
   ],
+  rules: {
+    // https://typescript-eslint.io/rules/comma-dangle/
+    // https://eslint.org/docs/latest/rules/comma-dangle#options
+    'comma-dangle': 'off',
+    '@typescript-eslint/comma-dangle': [
+      'warn',
+      {
+        arrays: 'only-multiline',
+        objects: 'always-multiline',
+        imports: 'never',
+        exports: 'never',
+        functions: 'never',
+      },
+    ],
+  },
   plugins: ['svelte3', '@typescript-eslint'],
   ignorePatterns: ['*.cjs', '*.js'],
   overrides: [
