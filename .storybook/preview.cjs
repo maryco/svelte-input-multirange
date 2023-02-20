@@ -6,4 +6,10 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  // https://storybook.js.org/docs/react/configure/story-layout#global-layout
+  //layout: 'centered', // | fullscreen | padded(default)
+  docs: {
+    // Opt-out of inline rendering
+    // inlineStories: false,
+  },
 }
